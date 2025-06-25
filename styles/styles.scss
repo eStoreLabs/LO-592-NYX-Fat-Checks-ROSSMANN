@@ -7,6 +7,7 @@ $text-secondary: "Barlow Condensed", sans-serif;
 
 $fw-regular: 400;
 $fw-bold: 700;
+$fw-extra-bold: 800;
 
 $fs-base: 16px;
 $fs-header: 32px;
@@ -21,6 +22,7 @@ $px-XXL: 40px;
 $color-main: #ffffff;
 $color-bg: #7fac13;
 $color-accent: #df198e;
+$color-black: #000000;
 
 $media-breakpoint-sm: 576px;
 $media-breakpoint-md: 768px;
@@ -70,7 +72,47 @@ $media-breakpoint-xl: 1200px;
       font-size: $fs-header--desktop;
     }
   }
-
+  .es-kv {
+    &__left {
+      position: relative;
+      &--soczyste-container {
+        position: absolute;
+        bottom: 10%;
+        left: 60%;
+        transform: translate(-50%, -50%);
+      }
+      &--soczyste-wrapper {
+        position: relative;
+        width: max-content;
+      }
+      &--soczyste-text {
+        position: absolute;
+        top: 50%;
+        left: 52%;
+        transform: translate(-50%, -50%);
+        width: max-content;
+        color: $color-black;
+        font-weight: $fw-bold;
+        font-size: 15px;
+      }
+    }
+    &__right {
+      position: relative;
+      &--nawilżenie {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 250px;
+      }
+      &--text {
+        font-family: $text-secondary;
+        text-transform: uppercase;
+        font-weight: $fw-extra-bold;
+        font-size: 28px;
+      }
+    }
+  }
   .es-colors {
     &__container {
       container-type: inline-size;

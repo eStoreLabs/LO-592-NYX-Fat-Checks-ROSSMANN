@@ -1,3 +1,4 @@
+@charset "UTF-8";
 #es-rc #es-rc-content {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
@@ -40,6 +41,47 @@
   #es-rc #es-rc-content .es-section-title {
     font-size: 48px;
   }
+}
+#es-rc #es-rc-content .es-kv__left {
+  position: relative;
+}
+#es-rc #es-rc-content .es-kv__left--soczyste-container {
+  position: absolute;
+  bottom: 10%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+}
+#es-rc #es-rc-content .es-kv__left--soczyste-wrapper {
+  position: relative;
+  width: -moz-max-content;
+  width: max-content;
+}
+#es-rc #es-rc-content .es-kv__left--soczyste-text {
+  position: absolute;
+  top: 50%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  width: -moz-max-content;
+  width: max-content;
+  color: #000000;
+  font-weight: 700;
+  font-size: 15px;
+}
+#es-rc #es-rc-content .es-kv__right {
+  position: relative;
+}
+#es-rc #es-rc-content .es-kv__right--nawilżenie {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 250px;
+}
+#es-rc #es-rc-content .es-kv__right--text {
+  font-family: "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 28px;
 }
 #es-rc #es-rc-content .es-colors__container {
   container-type: inline-size;
