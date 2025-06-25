@@ -2,14 +2,15 @@
 
 // set up variables
 
-$text-main: "font-name", sans-serif;
-$text-secondary: "font-name", sans-serif;
+$text-main: "Montserrat", sans-serif;
+$text-secondary: "Barlow Condensed", sans-serif;
 
 $fw-regular: 400;
 $fw-bold: 700;
 
 $fs-base: 16px;
 $fs-header: 32px;
+$fs-header--desktop: 48px;
 
 $px-S: 8px;
 $px-M: 16px;
@@ -57,15 +58,120 @@ $media-breakpoint-xl: 1200px;
     margin: 0 auto;
   }
 
-  button {
-    display: block;
-  }
-
   .es-section-title {
     font-family: $text-secondary;
     font-size: $fs-header;
     font-weight: $fw-bold;
     text-align: center;
-    margin-block: $px-M;
+    padding-block: $px-M;
+    text-transform: uppercase;
+    text-wrap: balance;
+    @media (min-width: $media-breakpoint-md) {
+      font-size: $fs-header--desktop;
+    }
+  }
+
+  .es-colors {
+    &__container {
+      container-type: inline-size;
+      container-name: colors;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+
+      @media (min-width: 700px) and (max-width: 899px) {
+        display: grid;
+        grid-template-columns: repeat(4, 150px);
+        grid-template-rows: repeat(2, 1fr);
+      }
+      @media (min-width: 900px) {
+        flex-wrap: nowrap;
+      }
+    }
+    &__item {
+      position: relative;
+      max-width: 150px;
+      max-height: 430px;
+      overflow: hidden;
+
+      @container colors (min-width: 330px) {
+        &:nth-of-type(2) {
+          background-color: #ff7167;
+        }
+        &:nth-of-type(4) {
+          background-color: #ff5f74;
+        }
+        &:nth-of-type(6) {
+          background-color: #ff6e72;
+        }
+        &:nth-of-type(8) {
+          background-color: #d36089;
+        }
+      }
+
+      @container colors (min-width: 450px) {
+        &:nth-of-type(3) {
+          background-color: #f3676d;
+        }
+        &:nth-of-type(4) {
+          background-color: unset;
+        }
+        &:nth-of-type(5) {
+          background-color: #ff78ab;
+        }
+      }
+
+      @container colors (min-width: 615px) {
+        &:nth-of-type(4) {
+          background-color: #ff5f74;
+        }
+        &:nth-of-type(5) {
+          background-color: unset;
+        }
+        &:nth-of-type(7) {
+          background-color: #fc5365;
+        }
+      }
+      @media (min-width: 900px) {
+        &:nth-of-type(5) {
+          background-color: #ff78ab;
+        }
+        &:nth-of-type(8) {
+          background-color: unset;
+        }
+      }
+    }
+    &__bg {
+      height: 100%;
+      object-fit: cover;
+      &--desktop {
+        display: none;
+      }
+      @media (min-width: 900px) {
+        &--desktop {
+          display: block;
+        }
+        &--mobile {
+          display: none;
+        }
+      }
+    }
+    &__name {
+      text-align: center;
+      line-height: 1.3;
+      font-weight: $fw-bold;
+      text-transform: uppercase;
+      text-wrap: balance;
+      width: max-content;
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      @media (min-width: 900px) {
+        font-size: calc(0.8 * $fs-base);
+        top: 10px;
+      }
+    }
   }
 }
