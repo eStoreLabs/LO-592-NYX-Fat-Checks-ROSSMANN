@@ -37,10 +37,8 @@
   text-transform: uppercase;
   text-wrap: balance;
 }
-@media (min-width: 768px) {
-  #es-rc #es-rc-content .es-section-title {
-    font-size: 48px;
-  }
+#es-rc #es-rc-content .es-kv {
+  position: relative;
 }
 #es-rc #es-rc-content .es-kv__left {
   position: relative;
@@ -55,6 +53,10 @@
   position: relative;
   width: -moz-max-content;
   width: max-content;
+  transition: all 200ms ease-in-out;
+}
+#es-rc #es-rc-content .es-kv__left--soczyste-wrapper:hover {
+  scale: 1.1;
 }
 #es-rc #es-rc-content .es-kv__left--soczyste-text {
   position: absolute;
@@ -72,16 +74,130 @@
 }
 #es-rc #es-rc-content .es-kv__right--nawilżenie {
   position: absolute;
-  top: 70%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 250px;
+  transition: all 200ms ease-in-out;
+}
+#es-rc #es-rc-content .es-kv__right--nawilżenie:hover {
+  scale: 1.1;
+}
+#es-rc #es-rc-content .es-kv__right--text-container {
+  margin-block: 24px;
 }
 #es-rc #es-rc-content .es-kv__right--text {
   font-family: "Barlow Condensed", sans-serif;
   text-transform: uppercase;
   font-weight: 800;
   font-size: 28px;
+  position: relative;
+  z-index: 1;
+  height: 135px;
+  width: 230px;
+  margin: auto;
+}
+#es-rc #es-rc-content .es-kv__right--text > * {
+  max-width: -moz-max-content;
+  max-width: max-content;
+  padding: 2px 8px;
+  transition: all 200ms ease-in-out;
+}
+#es-rc #es-rc-content .es-kv__right--text > *:hover {
+  scale: 1.1;
+}
+#es-rc #es-rc-content .es-kv__right--text--blask {
+  background-color: #000000;
+  transform: rotate(-5.87deg);
+  position: absolute;
+  top: 13px;
+  left: 5px;
+  z-index: 3;
+}
+#es-rc #es-rc-content .es-kv__right--text--kolor {
+  background-color: #ffffff;
+  color: #000000;
+  transform: rotate(-2.16deg);
+  position: absolute;
+  top: 50px;
+  left: 5px;
+  z-index: 2;
+}
+#es-rc #es-rc-content .es-kv__right--text--formuła {
+  background-color: #000000;
+  transform: rotate(1.32deg);
+  position: absolute;
+  top: 90px;
+  left: 1px;
+  z-index: 1;
+}
+#es-rc #es-rc-content .es-kv__title {
+  background-color: rgba(223, 25, 142, 0.8);
+  width: 100%;
+}
+#es-rc #es-rc-content .es-kv__subtitle {
+  text-transform: uppercase;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 22.4px;
+  text-align: center;
+  text-wrap: balance;
+  padding-block: 16px;
+}
+@media (min-width: 576px) {
+  #es-rc #es-rc-content .es-kv__left--soczyste-container {
+    left: 74%;
+    bottom: 14%;
+    z-index: 1;
+  }
+  #es-rc #es-rc-content .es-kv__right--nawilżenie {
+    top: unset;
+    bottom: -9%;
+    left: 50%;
+    max-width: 45%;
+  }
+  #es-rc #es-rc-content .es-kv__right--text-container {
+    margin-block: 0;
+    position: absolute;
+    top: 1%;
+    right: 1%;
+  }
+}
+@media (min-width: 768px) {
+  #es-rc #es-rc-content .es-kv__container {
+    display: flex;
+  }
+  #es-rc #es-rc-content .es-kv__left--soczyste-container {
+    left: 115%;
+    bottom: 26%;
+  }
+  #es-rc #es-rc-content .es-kv__right--nawilżenie {
+    top: 12%;
+    left: 11%;
+    max-width: 45%;
+  }
+  #es-rc #es-rc-content .es-kv__right--text {
+    font-size: 20px;
+    width: 175px;
+    height: 100px;
+  }
+  #es-rc #es-rc-content .es-kv__right--text--kolor {
+    top: 40px;
+  }
+  #es-rc #es-rc-content .es-kv__right--text--formuła {
+    top: 70px;
+  }
+  #es-rc #es-rc-content .es-kv__text-wrapper {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+  #es-rc #es-rc-content .es-kv__title {
+    padding-block: 8px;
+  }
+  #es-rc #es-rc-content .es-kv__subtitle {
+    padding-block: 4px;
+  }
 }
 #es-rc #es-rc-content .es-colors__container {
   container-type: inline-size;
@@ -91,23 +207,32 @@
   align-items: center;
   justify-content: center;
 }
-@media (min-width: 700px) and (max-width: 899px) {
-  #es-rc #es-rc-content .es-colors__container {
-    display: grid;
-    grid-template-columns: repeat(4, 150px);
-    grid-template-rows: repeat(2, 1fr);
-  }
-}
-@media (min-width: 900px) {
-  #es-rc #es-rc-content .es-colors__container {
-    flex-wrap: nowrap;
-  }
-}
 #es-rc #es-rc-content .es-colors__item {
   position: relative;
   max-width: 150px;
   max-height: 430px;
   overflow: hidden;
+}
+#es-rc #es-rc-content .es-colors__bg {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#es-rc #es-rc-content .es-colors__bg--desktop {
+  display: none;
+}
+#es-rc #es-rc-content .es-colors__name {
+  text-align: center;
+  line-height: 1.3;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-wrap: balance;
+  width: -moz-max-content;
+  width: max-content;
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translate(-50%, 0%);
 }
 @container colors (min-width: 330px) {
   #es-rc #es-rc-content .es-colors__item:nth-of-type(2) {
@@ -145,44 +270,29 @@
     background-color: #fc5365;
   }
 }
+@media (min-width: 700px) and (max-width: 899px) {
+  #es-rc #es-rc-content .es-colors__container {
+    display: grid;
+    grid-template-columns: repeat(4, 150px);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
 @media (min-width: 900px) {
+  #es-rc #es-rc-content .es-colors__container {
+    flex-wrap: nowrap;
+  }
   #es-rc #es-rc-content .es-colors__item:nth-of-type(5) {
     background-color: #ff78ab;
   }
   #es-rc #es-rc-content .es-colors__item:nth-of-type(8) {
     background-color: unset;
   }
-}
-#es-rc #es-rc-content .es-colors__bg {
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-#es-rc #es-rc-content .es-colors__bg--desktop {
-  display: none;
-}
-@media (min-width: 900px) {
   #es-rc #es-rc-content .es-colors__bg--desktop {
     display: block;
   }
   #es-rc #es-rc-content .es-colors__bg--mobile {
     display: none;
   }
-}
-#es-rc #es-rc-content .es-colors__name {
-  text-align: center;
-  line-height: 1.3;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-wrap: balance;
-  width: -moz-max-content;
-  width: max-content;
-  position: absolute;
-  top: 12px;
-  left: 50%;
-  transform: translate(-50%, 0%);
-}
-@media (min-width: 900px) {
   #es-rc #es-rc-content .es-colors__name {
     font-size: 12.8px;
     top: 10px;
