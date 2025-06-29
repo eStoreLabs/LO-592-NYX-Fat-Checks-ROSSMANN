@@ -6,8 +6,10 @@ $text-main: "Montserrat", sans-serif;
 $text-secondary: "Barlow Condensed", sans-serif;
 
 $fw-regular: 400;
+$fw-semi-bold: 600;
 $fw-bold: 700;
 $fw-extra-bold: 800;
+$fw-black: 900;
 
 $fs-base: 16px;
 $fs-header: 32px;
@@ -572,6 +574,96 @@ $transition: all 200ms ease-in-out;
       &__iframe {
         max-width: 70%;
       }
+    }
+  }
+
+  .es-cross {
+    padding: 60px $px-XL;
+
+    .es-section-title {
+      padding-block: 0;
+      margin-bottom: 60px;
+    }
+    &__productsCtn {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: flex-end;
+      container-type: inline-size;
+      container-name: cross;
+      gap: 32px;
+    }
+
+    &__single {
+      max-width: 375px;
+      display: flex;
+      flex-direction: column;
+      gap: $px-XL;
+
+      &:hover {
+        .es-cross__img {
+          transform: scale(1.1);
+        }
+      }
+    }
+    &__img {
+      transition: $transition;
+      max-height: 300px;
+      width: auto;
+    }
+    &__descCtn {
+      display: flex;
+      flex-direction: column;
+      gap: $px-M;
+      text-align: center;
+    }
+    &__name {
+      font-size: 18px;
+      font-weight: $fw-black;
+      text-transform: uppercase;
+    }
+
+    &__desc {
+      font-size: $fs-base;
+      font-weight: $fw-semi-bold;
+      text-wrap: balance;
+      @container cross (min-width: 782px) {
+        height: 100px;
+      }
+    }
+
+    &__link {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $color-main;
+      text-align: center;
+      background-color: $color-black;
+      width: 200px;
+      padding-block: 18px;
+      font-size: 18px;
+      font-weight: $fw-black;
+      transition: 0.4s all ease-in-out;
+      display: block;
+      margin: 0 auto;
+
+      &:hover {
+        background-color: $color-accent;
+      }
+    }
+
+    &__disc {
+      margin-top: $px-XXL;
+      text-align: center;
+      font-size: 12px;
+    }
+  }
+
+  .es-footer {
+    background-color: $color-black;
+    padding: 0 20px;
+
+    &__logo {
+      max-width: 250px;
     }
   }
 }
