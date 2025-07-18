@@ -429,20 +429,24 @@
   }
   #es-rc #es-rc-content .es-steps__steps-wrapper {
     position: absolute;
-    width: 80%;
+    width: 83%;
     top: 30%;
     right: 0;
     z-index: 2;
     padding: 0;
-    gap: 8px;
+    gap: 6px;
     align-items: flex-start;
   }
   #es-rc #es-rc-content .es-steps__item {
-    flex-basis: 23%;
+    flex-basis: 24%;
+    gap: 16px;
   }
   #es-rc #es-rc-content .es-steps__step-title {
-    font-size: 22.4px;
+    font-size: 18.72px;
     letter-spacing: 1.12px;
+  }
+  #es-rc #es-rc-content .es-steps__step-text {
+    font-size: 12px;
   }
 }
 @media (min-width: 880px) {
@@ -455,9 +459,17 @@
   }
   #es-rc #es-rc-content .es-steps__steps-wrapper {
     width: 75%;
+    right: 10px;
+    top: 31%;
   }
   #es-rc #es-rc-content .es-steps__item {
     gap: 12px;
+  }
+  #es-rc #es-rc-content .es-steps__step-title {
+    font-size: 22.4px;
+  }
+  #es-rc #es-rc-content .es-steps__step-text {
+    font-size: 14px;
   }
 }
 #es-rc #es-rc-content .es-video {
@@ -511,6 +523,9 @@
   transition: all 200ms ease-in-out;
   max-height: 300px;
   width: auto;
+}
+#es-rc #es-rc-content .es-cross__img--1 {
+  max-height: 250px;
 }
 #es-rc #es-rc-content .es-cross__descCtn {
   display: flex;
